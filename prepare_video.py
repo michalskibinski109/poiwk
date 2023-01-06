@@ -78,12 +78,14 @@ class ModelRunner:
     def __run_model(self, images: np.ndarray):
         # here goes your code. Images must be processed by model. every image must be replaced with processed image
         new_images = self.__prepare_images(images)
-        IMG_SIZE = images[0].shape[0]
+        IMG_WIDTH, IMG_HEIGHT = images[0].shape[1], images[0].shape[0]
         bar = tqdm(total=len(images))
         for i, image in enumerate(new_images):
             predicted = self.model.predict(np.expand_dims(image, axis=0), verbose=0)
             bbox = predicted[1][0]
-            x, y, w, h = bbox * IMG_SIZE
+            x, y, w, h = bbox
+            x, w = x * IMG_WIDTH, w * IMG_WIDTH
+            y, h = y * IMG_HEIGHT, h * IMG_HEIGHT
             start_point = (int(x), int(y))
             end_point = (int(x + w), int(y + h))
             try:
