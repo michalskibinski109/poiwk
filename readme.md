@@ -1,6 +1,12 @@
 # Server for video processing
 
 # usage 
+#### clone repository to your local machine
+```bash
+git clone https://github.com/michalskibinski109/poiwk
+```
+
+
 #### install dependencies
 ```bash
 pip install -r requirements.txt
@@ -21,4 +27,5 @@ http://localhost:5000
 3. change `__prepare_images` function in `VideoRunner` class to prepare images for your model. Image should be processed in exactly the same way as it was during training.
 
 If you have any questions, feel free to contact me: 
-itaknieodpowiem@spierdalaj.pwr
+
+[itaknieodpowiem@spierdalaj.pwr]()
