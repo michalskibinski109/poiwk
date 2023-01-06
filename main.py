@@ -1,7 +1,6 @@
 import os
 from app import app
-from flask import Flask, flash, request, redirect, url_for, render_template
-from werkzeug.utils import secure_filename
+from flask import flash, request, redirect, url_for, render_template
 from prepare_video import ModelRunner
 from pathlib import Path
 from miskibin import get_logger

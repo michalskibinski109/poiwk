@@ -1,0 +1,5 @@
+flask
+miskibin
+tensorflow
+tqdm
+opencv-python
